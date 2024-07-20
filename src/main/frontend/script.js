@@ -12,8 +12,6 @@ function displayFullName(){
     var fullName="";
     var fullNameElement=  document.getElementById("fullName");
 
-
-
     fullNameElement.innerHTML="";
 
     if(firstName === "" && lastName === ""){
