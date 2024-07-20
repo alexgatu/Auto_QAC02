@@ -1,0 +1,48 @@
+            #firstName {
+                color: #cc0052;
+                font-weight: bold;
+            }
+
+            .testClass {
+                background-color: #ffcc00;
+            }
+
+            form {
+                width: 50%;
+                margin: auto;
+            }
+            fieldset {
+                border: 2px solid black;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            legend {
+                font-weight: bold;
+                font-size: 20px;
+            }
+            label {
+                display: inline-block;
+                width: 200px;
+                text-align: right;
+                margin-right: 10px;
+            }
+            input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
+                width: 300px;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+            input[type="button"] {
+                padding: 5px 10px;
+                background-color: blue;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            input[type="radio"], input[type="checkbox"] {
+                margin-right: 10px;
+            }
+            textarea {
+                width: 300px;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
