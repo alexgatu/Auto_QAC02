@@ -43,5 +43,10 @@ public class Main {
         System.out.println("-------------------------------------------------");
         Circle circle = new Circle(5.4);
         System.out.println("Circle area:" + circle.getArea());
+        System.out.println("-------------------------------------------------");
+        Rectangle rectangle = new Rectangle(5, 7);
+        System.out.println("Rectangle area:" + rectangle.getArea());
+        System.out.println("Rectangle perimeter:" + rectangle.getPerimeter());
+        System.out.println("Rectangle diagonal:" + rectangle.getDiagonal());
     }
 }
