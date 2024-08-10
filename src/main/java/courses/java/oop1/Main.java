@@ -1,5 +1,7 @@
 package courses.java.oop1;
 
+import courses.java.oop2.Utils;
+
 public class Main {
     public static void main(String[] args) {
 //      instantiere obiect de tip pixuri
@@ -48,5 +50,6 @@ public class Main {
         System.out.println("Rectangle area:" + rectangle.getArea());
         System.out.println("Rectangle perimeter:" + rectangle.getPerimeter());
         System.out.println("Rectangle diagonal:" + rectangle.getDiagonal());
+
     }
 }
