@@ -4,7 +4,7 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public class Shape {
+public class Shape implements IShape {
 
     @Getter @Setter
     private String color;
@@ -13,6 +13,21 @@ public class Shape {
     private int vertices;
 
     public int getArea() {
+        return 0;
+    }
+
+    @Override
+    public void draw() {
+
+    }
+
+    @Override
+    public void printShape() {
+
+    }
+
+    @Override
+    public int countVertices() {
         return 0;
     }
 }
