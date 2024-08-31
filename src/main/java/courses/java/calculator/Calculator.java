@@ -1,4 +1,4 @@
-package courses.java;
+package courses.java.calculator;
 
 public class Calculator {
     public double compute(double firstParam, double secondParam, String operator)
