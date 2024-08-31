@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Smoke Tests">
+    <test thread-count="5" name="Auto_QAC02">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="testNG.MyFirstTestNGTest"/>
+        </classes>
+    </test>
+</suite>
