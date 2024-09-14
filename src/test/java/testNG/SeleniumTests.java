@@ -1,17 +1,13 @@
 package testNG;
 
-import courses.java.oop3.Browsers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.BrowserUtils;
 
 import java.time.Duration;
 
@@ -20,7 +16,7 @@ public class SeleniumTests {
 
     @Test
     public void test01() {
-        driver = BrowserUtils.getDriver();
+        driver = BrowserUtils.getDriver("chrome");
 
         driver.navigate().to("https://www.facebook.com/");
         WebElement cookies = driver.findElement(By.xpath("//*[@id=\"facebook\"]/body/div[3]/div[2]/div/div/div/div/div[3]/div[2]/div/div[2]/div[1]/div/div[1]/div/span/span"));
@@ -36,7 +32,7 @@ public class SeleniumTests {
     @Test
     public void test02() {
 
-        driver = BrowserUtils.getDriver();
+        driver = BrowserUtils.getDriver("chrome");
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.navigate().to("http://57.151.123.81:3000/#/");
