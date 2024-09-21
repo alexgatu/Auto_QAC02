@@ -1,8 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,5 +24,43 @@ public class BasePage {
 
     public void waitUntilElementVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitUntilElementClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public Alert waitUntilAlertIsPresent() {
+        return wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public String getAlertText(Alert alert) {
+        return alert.getText();
+    }
+
+    public void acceptAlert(Alert alert) {
+        //Press the OK button from alert
+        alert.accept();
+    }
+
+    public void acceptAlert(Alert alert, String response) {
+        //enter response on prompt alert
+        alert.sendKeys(response);
+        //Press the OK button from alert
+        alert.accept();
+    }
+
+    public void cancelAlert(Alert alert) {
+        //Press the OCancel button from alert
+        alert.dismiss();
+    }
+
+    public boolean isAlertClosed() {
+        try {
+            driver.switchTo().alert();
+            return false;
+        } catch (NoAlertPresentException e) {
+            return true;
+        }
     }
 }

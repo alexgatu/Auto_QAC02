@@ -1,8 +1,12 @@
 package tests;
 
+import org.checkerframework.checker.units.qual.A;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import pages.BasePage;
 import utils.BrowserUtils;
 import utils.ConfigUtils;
 import utils.ConstantUtils;
@@ -10,6 +14,8 @@ import utils.ConstantUtils;
 public class BaseTest {
     protected WebDriver driver;
     protected String baseURL;
+    protected BasePage basePage;
+    protected Alert alert;
 
     public void getBrowser(String browserName) {
         driver = BrowserUtils.getDriver(browserName);
@@ -20,6 +26,7 @@ public class BaseTest {
                 "browser", "chrome");
         System.out.println("Load browser type: " + browserName);
         driver = BrowserUtils.getDriver(browserName);
+        basePage = new BasePage(driver);
     }
 
     public void setUp() {
@@ -50,6 +57,23 @@ public class BaseTest {
 
     public void getBaseURL(String configFileName) {
         baseURL = ConfigUtils.readGenericElementFromConfig(configFileName, "base.url");
+    }
+
+    public void navigateToURL(String path) {
+        System.out.println("Open next url:" + baseURL + path);
+        driver.navigate().to(baseURL + path);
+    }
+
+    public void verifyAlertIsClosed() {
+        Assert.assertTrue(basePage.isAlertClosed());
+        System.out.println("Alert was closed successfully");
+    }
+
+    public void verifyAlertText(String expectedText) {
+        System.out.println("Get alert text");
+        alert = basePage.waitUntilAlertIsPresent();
+        System.out.println(basePage.getAlertText(alert));
+        Assert.assertEquals(basePage.getAlertText(alert), expectedText);
     }
 
 }
