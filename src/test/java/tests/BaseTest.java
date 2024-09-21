@@ -29,6 +29,16 @@ public class BaseTest {
         basePage = new BasePage(driver);
     }
 
+    public void getBrowserWithEnv() {
+        String browserName = ConfigUtils.readGenericElementFromConfig(ConstantUtils.DEFAULT_CONFIG_FILE,
+                "browser", "chrome");
+        String environment = ConfigUtils.readGenericElementFromConfig(ConstantUtils.DEFAULT_CONFIG_FILE,
+                "environment", "local");
+        System.out.println("Load browser type: " + browserName);
+        driver = BrowserUtils.getDriver(browserName, environment);
+        basePage = new BasePage(driver);
+    }
+
     public void setUp() {
         getBaseURL();
         getBrowser();

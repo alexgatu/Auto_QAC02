@@ -3,6 +3,9 @@ package tests;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.AlertsPage;
+import utils.BrowserUtils;
+
+import java.io.IOException;
 
 public class AlertsTest extends BaseTest {
     AlertsPage alertsPage;
@@ -17,7 +20,7 @@ public class AlertsTest extends BaseTest {
     }
 
     @Test
-    public void openAndCloseSimpleAlert() {
+    public void openAndCloseSimpleAlert() throws IOException {
         navigateToURL("/?page=alerts");
         alertsPage = new AlertsPage(driver);
 
@@ -27,9 +30,14 @@ public class AlertsTest extends BaseTest {
         verifyAlertText(expectedSimpleAlertText);
 
         System.out.println("Accept alert");
-        alertsPage.acceptAlert(alert);
-
-        verifyAlertIsClosed();
+//        alertsPage.acceptAlert(alert);
+        try {
+            verifyAlertIsClosed();
+        } catch (AssertionError e) {
+            System.out.println("Alert is not closed");
+            BrowserUtils.generateScreenShots("openAndCloseSimpleAlert", driver, true);
+            throw e;
+        }
     }
 
     @Test
