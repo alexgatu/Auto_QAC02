@@ -24,6 +24,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//h1[contains(text(),'Sign in')]")
     private WebElement pageIdentifier;
 
+    @FindBy(className = "error-message")
+    private WebElement errorMessageElement;
+
     public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -63,6 +66,12 @@ public class LoginPage extends BasePage {
         WebElement welcomeMessage = waitUntilElementVisible(By.xpath(xpath));
         System.out.println("Welcome message displayed: " + welcomeMessage.getText());
         return welcomeMessage.isDisplayed();
+    }
+
+    public boolean verifyLoginFailed(String errorMessage) {
+        waitUntilElementVisible(errorMessageElement);
+        System.out.println("Error message displayed: " + errorMessageElement.getText());
+        return errorMessageElement.getText().equalsIgnoreCase(errorMessage);
     }
 
 }

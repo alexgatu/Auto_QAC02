@@ -1,0 +1,7 @@
+<loginModel>
+    <account>
+        <username>test</username>
+        <password>test</password>
+    </account>
+    <loginErr>Invalid username or password!</loginErr>
+</loginModel>

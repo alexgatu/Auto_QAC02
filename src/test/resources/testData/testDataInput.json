@@ -1,0 +1,16 @@
+[
+  {
+      "account": {
+        "username": "test",
+        "password": "test"
+      },
+      "loginErr": "Invalid username or password!"
+    },
+  {
+    "account": {
+      "username": "dingo",
+      "password": "dingopassword"
+    },
+    "loginErr": ""
+  }
+]
