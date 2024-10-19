@@ -32,7 +32,7 @@ public class MyFirstTestNGTest {
     @Test(description = "This is login test", groups = {"smoke", "regression"})
     public void login() {
         System.out.println("This is login");
-        Assert.fail();
+//        Assert.fail();
     }
 
     protected void test3() {

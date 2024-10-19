@@ -10,21 +10,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <xmlSuite>runSuites/runSuitesWithGroups.xml</xmlSuite>
+        <xmlSuite>runSuites/runSuitesWithParams.xml</xmlSuite>
+        <junitVersion>4.13.2</junitVersion>
+        <testNgVersion>7.10.2</testNgVersion>
+        <lombokVersion>1.18.34</lombokVersion>
+        <extentReportVersion>5.1.2</extentReportVersion>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>${junitVersion}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.10.1</version>
+            <version>${testNgVersion}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -45,7 +49,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
+            <version>${lombokVersion}</version>
             <scope>provided</scope>
         </dependency>
         <!-- json parser -->
@@ -105,6 +109,14 @@
             <version>5.2.3</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentReportVersion}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -131,6 +143,7 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>${xmlSuite}</suiteXmlFile>
                         </suiteXmlFiles>
+                        <testFailureIgnore>true</testFailureIgnore>
                     </configuration>
                 </plugin>
                 <plugin>

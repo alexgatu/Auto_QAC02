@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Tests">
+    <test thread-count="5" name="First TNG">
+        <classes>
+            <class name="testNG.MyFirstTestNGTest"/>
+        </classes>
+    </test>
+    <test thread-count="5" name="Selenium Tests">
+        <classes>
+            <class name="testNG.SeleniumTests"/>
+        </classes>
+    </test>
+    <test thread-count="5" name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+    <test name = "Modal Tests">
+        <classes>
+            <class name="tests.ModalTest" />
+        </classes>
+    </test>
+
+</suite>
