@@ -15,6 +15,7 @@
         <testNgVersion>7.10.2</testNgVersion>
         <lombokVersion>1.18.34</lombokVersion>
         <extentReportVersion>5.1.2</extentReportVersion>
+        <restAssuredVersion>5.5.0</restAssuredVersion>
     </properties>
 
     <dependencies>
@@ -115,8 +116,13 @@
             <artifactId>extentreports</artifactId>
             <version>${extentReportVersion}</version>
         </dependency>
-
-
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.rest-assured/rest-assured &ndash;&gt;-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restAssuredVersion}</version>
+        <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
